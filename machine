@@ -1,0 +1,7 @@
+#!/bin/bash
+
+export DIGITALOCEAN_ACCESS_TOKEN=abeab52130052cedb220acb091763a72ec0293e3568d41b0c1926956bcda026e
+export DIGITALOCEAN_SSH_KEY_FINGERPRINT=3e:e4:92:ac:49:fd:b8:74:eb:be:d2:7c:63:3d:e3:2e
+export DIGITALOCEAN_SSH_USER=root
+
+docker-machine create --driver digitalocean docker-test
