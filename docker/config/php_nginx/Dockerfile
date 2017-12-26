@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER Chris Fidao
+MAINTAINER Federico Francescato
 
 RUN apt-get update \
 	&& apt-get install -y locales \

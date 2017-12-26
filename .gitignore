@@ -1,2 +1,3 @@
-machine
-app/packaged
+docker/machine
+packaged
+.env

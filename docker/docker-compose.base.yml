@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     image: dockerico/app
     volumes:
-     - ./:/var/www/html
+     - ../:/var/www/html
     ports:
      - "${BANGRZ_PORT}:80"
     networks:
@@ -17,7 +17,7 @@ services:
       dockerfile: Dockerfile
     image: dockerico/node
     volumes:
-     - ./:/var/www/html
+     - ../:/var/www/html
     networks:
      - appnet
   mysql:
