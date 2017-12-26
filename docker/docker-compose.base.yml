@@ -2,7 +2,7 @@ version: '2'
 services:
   bangrz:
     build:
-      context: ./config/php_nginx
+      context: ./app
       dockerfile: Dockerfile
     image: dockerico/app
     volumes:
@@ -13,7 +13,7 @@ services:
      - appnet
   node:
     build:
-      context: ./config/node
+      context: ./node
       dockerfile: Dockerfile
     image: dockerico/node
     volumes:
