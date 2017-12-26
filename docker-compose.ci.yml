@@ -1,22 +1,22 @@
 version: '2'
 services:
-	app:
-		extends:
-			file: docker-compose.base.yml
-			service: bangrz
-	node:
-		extends:
-			file: docker-compose.base.yml
-			service: node
-	redis:
-		extends:
-			file: docker-compose.base.yml
-			service: redis
+  app:
+    extends:
+      file: docker-compose.base.yml
+      service: bangrz
+  node:
+    extends:
+      file: docker-compose.base.yml
+      service: node
+  redis:
+    extends:
+      file: docker-compose.base.yml
+      service: redis
 networks:
-	appnet:
-		driver: "bridge"
+  appnet:
+    driver: "bridge"
 volumes:
-	mysqldata:
-		driver: "local"
-	redisdata:
-		driver: "local"
+  mysqldata:
+    driver: "local"
+  redisdata:
+    driver: "local"
