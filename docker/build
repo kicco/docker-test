@@ -27,10 +27,10 @@ cd $DIR/packaged
 # /var/lib/jenkins/.venv/bin/aws s3 cp s3://shippingdocker-secrets/env-prod .env
 
 # Build the Docker image with latest code
-cd $DIR/
+cd $DIR/config/php_nginx/
 docker build \
-    -t shippingdocker.com/bangrz:latest \
-    -t shippingdocker.com/bangrz:$HASH .
+    -t dockerico/bangrz:latest \
+    -t dockerico/bangrz:$HASH .
 
 # Clean up packaged directory
 cd $DIR/packaged
