@@ -1,0 +1,49 @@
+version: '2'
+services:
+  bangrz:
+    build:
+      context: ./config/php_nginx
+      dockerfile: Dockerfile
+    image: dockerico/app
+    volumes:
+     - ./:/var/www/html
+    ports:
+     - "${BANGRZ_PORT}:80"
+    networks:
+     - appnet
+  node:
+    build:
+      context: ./config/node
+      dockerfile: Dockerfile
+    image: dockerico/node
+    volumes:
+     - ./:/var/www/html
+    networks:
+     - appnet
+  mysql:
+    image: mysql:5.7
+    ports:
+     - "${MYSQL_PORT}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASS}"
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PASS}"
+    volumes:
+     - mysqldata:/var/lib/mysql
+    networks:
+     - appnet
+  redis:
+    image: redis:alpine
+    volumes:
+     - redisdata:/data
+    networks:
+     - appnet
+networks:
+  appnet:
+    driver: "bridge"
+volumes:
+  mysqldata:
+    driver: "local"
+  redisdata:
+    driver: "local"

@@ -19,7 +19,7 @@ if [ ! -z "$BUILD_NUMBER" ]; then
     TTY="-T"
 fi
 
-COMPOSE="docker-compose -f docker-compose.$COMPOSE_FILE.yml"
+COMPOSE="docker-compose -f ./docker/docker-compose.$COMPOSE_FILE.yml"
 
 if [ $# -gt 0 ];then
     if [ "$1" == "art" ]; then
