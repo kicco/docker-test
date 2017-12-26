@@ -14,6 +14,7 @@ node('master') {
             // Create .env file for testing
             sh 'cp .env.example .env'
             sh './develop art key:generate'
+            // TODO move this stuff in S3 protected file
             sh 'sed -i "s/REDIS_HOST=.*/REDIS_HOST=redis/" .env'
             sh 'sed -i "s/CACHE_DRIVER=.*/CACHE_DRIVER=redis/" .env'
             sh 'sed -i "s/SESSION_DRIVER=.*/SESSION_DRIVER=redis/" .env'
