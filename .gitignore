@@ -2,3 +2,4 @@ docker/machine
 .env
 packaged/*
 !packaged/.gitkeep
+vendor
